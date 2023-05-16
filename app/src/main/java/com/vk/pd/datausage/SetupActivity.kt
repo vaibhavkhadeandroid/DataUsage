@@ -22,7 +22,12 @@ class SetupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding =ActivitySetupBinding.inflate(layoutInflater)
         val view = binding.root
+
         setContentView(view)
+      var mySharedPreferences=  MySharedPreferences.getExcludeAppsPrefs(baseContext)
+     var mySharedPreferencesedit= mySharedPreferences?.edit()
+        mySharedPreferencesedit?.putBoolean(Constants.SETUP_FINISHED,true);
+        mySharedPreferencesedit?.commit()
 //        binding. fragmentprogress.progressDrawable= R.drawable.progressbarbacgrounddrawble
 //        binding. fragmentprogress.getProgressDrawable()?.setColorFilter(
 //            Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
